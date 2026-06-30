@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>กะเพราหมูสับไข่ดาว - สูตรเด็ดชมพูพาสเทล</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@300;400;500&family=Pattaya&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-pink: #FFB7B2;
+            --light-pink: #FFE5E5;
+            --dark-pink: #FF8B94;
+            --bg-white: #FFFDFD;
+            --text-dark: #4A4A4A;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Mitr', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-white);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* Hero Section */
+        header {
+            background: linear-gradient(135deg, var(--light-pink), var(--primary-pink));
+            padding: 60px 20px;
+            text-align: center;
+            border-bottom-left-radius: 50px;
+            border-bottom-right-radius: 50px;
+            box-shadow: 0 4px 15px rgba(255, 183, 178, 0.3);
+        }
+
+        h1 {
+            font-family: 'Pattaya', sans-serif;
+            font-size: 3.5rem;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: #fff;
+            font-weight: 300;
+        }
+
+        /* Container */
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        /* Section Styling */
+        section {
+            background: white;
+            padding: 30px;
+            margin-bottom: 30px;
+            border-radius: 20px;
+            border: 2px solid var(--light-pink);
+            box-shadow: 0 8px 20px rgba(255, 183, 178, 0.1);
+        }
+
+        h2 {
+            color: var(--dark-pink);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 2px solid var(--light-pink);
+            padding-bottom: 10px;
+        }
+
+        /* Ingredients List */
+        .ingredients-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .ingredient-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px;
+            background: var(--bg-white);
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+
+        .ingredient-item:hover {
+            transform: translateY(-2px);
+            background: var(--light-pink);
+        }
+
+        /* Interactive Steps */
+        .step-list {
+            list-style: none;
+        }
+
+        .step-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 12px;
+            background: var(--bg-white);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .step-item:hover {
+            background: var(--light-pink);
+        }
+
+        .step-item.completed {
+            background: #E8F5E9;
+            border-left: 5px solid #81C784;
+            opacity: 0.7;
+        }
+
+        .step-item.completed .step-text {
+            text-decoration: line-through;
+            color: #757575;
+        }
+
+        .checkbox-custom {
+            width: 24px;
+            height: 24px;
+            border: 2px solid var(--primary-pink);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-top: 3px;
+            background: white;
+        }
+
+        .step-item.completed .checkbox-custom {
+            background: #4CAF50;
+            border-color: #4CAF50;
+        }
+
+        .step-item.completed .checkbox-custom::after {
+            content: "✓";
+            color: white;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .step-text {
+            font-size: 1.05rem;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: var(--dark-pink);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            h1 { font-size: 2.5rem; }
+            section { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>ผัดกะเพราหมูสับไข่ดาว</h1>
+        <p class="subtitle">สูตรเด็ดทำง่าย อร่อยฟิน สไตล์โฮมเมด</p>
+    </header>
+
+    <div class="container">
+        
+        <section id="ingredients">
+            <h2>🍳 วัตถุดิบและส่วนผสม</h2>
+            <div class="ingredients-grid">
+                <div class="ingredient-item"><span>🐷</span> หมูสับ 200 กรัม</div>
+                <div class="ingredient-item"><span>🌿</span> ใบกะเพรา 1 กำมือ</div>
+                <div class="ingredient-item"><span>🧄</span> กระเทียม 5 กลีบ</div>
+                <div class="ingredient-item"><span>🌶️</span> พริกขี้หนู (ตามชอบ)</div>
+                <div class="ingredient-item"><span>🍳</span> ไข่ไก่ 1 ฟอง</div>
+                <div class="ingredient-item"><span>🫙</span> ซอสหอยนางรม 1 ช้อนโต๊ะ</div>
+                <div class="ingredient-item"><span>🧪</span> ซีอิ๊วขาว 1 ช้อนชา</div>
+                <div class="ingredient-item"><span>🍯</span> น้ำตาลทราย 1/2 ช้อนชา</div>
+                <div class="ingredient-item"><span>⚫</span> ซีอิ๊วดำ (แต่งสี) เล็กน้อย</div>
+            </div>
+        </section>
+
+        <section id="steps">
+            <h2>🔥 ขั้นตอนการทำอย่างละเอียด</h2>
+            <p style="font-size: 0.9rem; color: #888; margin-bottom: 15px;">* ติ๊กถูกหน้าข้อเพื่อบันทึกขั้นตอนที่ทำเสร็จแล้วได้นะ!</p>
+            
+            <ul class="step-list">
+                <li class="step-item" onclick="toggleStep(this)">
+                    <div class="checkbox-custom"></div>
+                    <div class="step-text"><strong>ขั้นตอนที่ 1:</strong> ตั้งกระทะใส่น้ำมันให้ร้อน ใช้ไฟแรง ตอกไข่ไก่ลงไปทอดให้ขอบกรอบ ไข่แดงเป็นลาวาตามชอบ แล้วตักพักไว้</div>
+                </li>
+                <li class="step-item" onclick="toggleStep(this)">
+                    <div class="checkbox-custom"></div>
+                    <div class="step-text"><strong>ขั้นตอนที่ 2:</strong> โขลกพริกและกระเทียมเข้าด้วยกันพอหยาบ เพื่อให้ได้กลิ่นหอมและรสชาติที่จัดจ้าน</div>
+                </li>
+                <li class="step-item" onclick="toggleStep(this)">
+                    <div class="checkbox-custom"></div>
+                    <div class="step-text"><strong>ขั้นตอนที่ 3:</strong> เทน้ำมันออกจากกระทะให้เหลือติดกระทะเล็กน้อย ใส่พริกกระเทียมที่โขลกไว้ลงไปผัดจนส่งกลิ่นหอม (ระวังฉุนนะ!)</div>
+                </li>
+                <li class="step-item" onclick="toggleStep(this)">
+                    <div class="checkbox-custom"></div>
+                    <div class="step-text"><strong>ขั้นตอนที่ 4:</strong> ใส่หมูสับลงไปผัด ยีหมูให้กระจายตัวไม่จับเป็นก้อน ผัดจนหมูเริ่มสุกและแห้งเข้าเนื้อ</div>
+                </li>
+                <li class="step-item" onclick="toggleStep(this)">
+                    <div class="checkbox-custom"></div>
+                    <div class="step-text"><strong>ขั้นตอนที่ 5:</strong> ปรุงรสด้วยซอสหอยนางรม ซีอิ๊วขาว น้ำตาลทราย และเหยาะซีอิ๊วดำแต่งสีเล็กน้อย เร่งไฟแรงแล้วผัดให้ส่วนผสมทุกอย่างเข้ากันอย่างรวดเร็ว</div>
+                </li>
+                <li class="step-item" onclick="toggleStep(this)">
+                    <div class="checkbox-custom"></div>
+                    <div class="step-text"><strong>ขั้นตอนที่ 6:</strong> ใส่ใบกะเพราลงไป ปิดไฟทันที! แล้วพลิกกระทะผัดให้ใบกะเพราโดนความร้อนพอสลด (วิธีนี้จะทำให้กะเพราหอมและสีไม่คล้ำ)</div>
+                </li>
+                <li class="step-item" onclick="toggleStep(this)">
+                    <div class="checkbox-custom"></div>
+                    <div class="step-text"><strong>ขั้นตอนที่ 7:</strong> ตักกะเพราหมูสับราดบนข้าวสวยร้อนๆ เสิร์ฟคู่กับไข่ดาวกรอบๆ ที่เตรียมไว้ พร้อมทานแล้วค่ะ! 💕</div>
+                </li>
+            </ul>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>สร้างสรรค์ด้วยความอร่อยและความรักในโทนสีชมพูขาว © 2026</p>
+    </footer>
+
+    <script>
+        function toggleStep(element) {
+            element.classList.toggle('completed');
+        }
+    </script>
+</body>
+</html>
